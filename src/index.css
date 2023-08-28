@@ -1,0 +1,313 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-family: "Josefin Sans", sans-serif;
+   transition: 0.8s;
+}
+
+:root {
+   --dark-theme: #181423;
+}
+.body {
+   font-family: "Josefin Sans", sans-serif;
+}
+
+p {
+   text-transform: capitalize;
+}
+
+.app {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   font-family: "Josefin Sans", sans-serif;
+}
+
+.app .header {
+   height: 40%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 100px 0;
+
+   background-size: cover;
+   color: white;
+}
+
+.app .text {
+   font-size: 24px;
+   position: relative;
+   width: 23em;
+}
+
+.app .text p {
+   margin: 20px 0;
+}
+
+.app .text p:first-child {
+   font-weight: bold;
+   font-size: 28px;
+}
+
+.app .text ul {
+   list-style-type: decimal;
+   margin-left: 30px;
+}
+
+.text ul li {
+   margin-bottom: 10px;
+   font-size: 18px;
+}
+
+.text .theme {
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin-top: 20px;
+}
+
+.text .theme img {
+   width: 20px;
+   margin-right: 5px;
+   margin-top: 5px;
+}
+
+.main-content {
+   width: 100%;
+   height: 100%;
+   color: white;
+   display: flex;
+   justify-content: center;
+}
+
+.main-content .to-do-list {
+   background-color: transparent;
+   display: flex;
+   flex-direction: column;
+   width: 35em;
+}
+.main-content .to-do-list .adding {
+   margin-bottom: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transform: translateY(-50%);
+   width: 100%;
+   color: #cacde8;
+}
+.main-content .to-do-list .adding .input-to-do {
+   width: 80%;
+   padding: 20px;
+   background-color: #29203f;
+   border: none;
+   outline: none;
+   border-radius: 6px;
+   box-shadow: 0px 0px 2px black;
+   color: #cacde8;
+   font-size: 20px;
+}
+.main-content .to-do-list .adding .input-to-do::placeholder {
+   color: #777a92;
+   font-family: "Josefin Sans", sans-serif;
+}
+
+.main-content .to-do-list .adding button {
+   padding: 20px 25px;
+   border-radius: 6px;
+   border: none;
+   cursor: pointer;
+   font-size: 20px;
+
+   box-shadow: 0px 0px 2px black;
+}
+
+.to-do-list .list {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   border-radius: 6px;
+}
+
+.to-do-list .list .list-item {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   background-color: #29203f;
+   border-bottom: 1px solid #cacde8;
+}
+.check {
+   display: block;
+   width: 23px;
+   height: 23px;
+   border: 1px solid #eee;
+   margin-right: 15px;
+   border-radius: 500%;
+}
+.checked {
+   background-image: linear-gradient(
+      135deg,
+      hsl(192, 100%, 67%) 0%,
+      hsl(280, 87%, 65%) 100%
+   );
+   border: none;
+   position: relative;
+}
+.checked::before {
+   content: "";
+   position: absolute;
+   top: 54%;
+   left: 3px;
+   background-color: white;
+   width: 30%;
+   height: 2px;
+   transform: rotate(45deg);
+}
+
+.checked::after {
+   content: "";
+   position: absolute;
+   top: 43%;
+   left: 5px;
+   background-color: white;
+   width: 68%;
+   height: 2px;
+   transform: rotate(-50deg);
+}
+.done {
+   text-decoration: line-through;
+   font-style: italic;
+}
+
+.delete {
+   display: block;
+   position: relative;
+   width: 23px;
+   height: 23px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.to-do-list .list .list-item .delete:before,
+.to-do-list .list .list-item .delete:after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #777a92;
+}
+
+.to-do-list .list .list-item .delete:before {
+   transform: rotate(-45deg);
+}
+.to-do-list .list .list-item .delete:after {
+   transform: rotate(45deg);
+}
+
+.to-do-list .list .list-item:first-child {
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
+}
+
+.to-do-list .list .list-item span:nth-child(2) {
+   flex: 1;
+}
+
+.to-do-list .list .navbar {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 14px;
+   background-color: #29203f;
+   color: #cacde8;
+   border-bottom-left-radius: 6px;
+   border-bottom-right-radius: 6px;
+   background-color: transparent;
+}
+.to-do-list .list .navbar div {
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 20px 10px;
+   color: #777a92;
+}
+.to-do-list .list .navbar .main-navbar {
+   width: 40%;
+   cursor: pointer;
+}
+
+.main-navbar .activ-navbar {
+   color: #0096ff;
+}
+
+.to-do-list .list .navbar .secondary-navbar {
+   width: 60%;
+   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+   .app .text {
+      width: 18em;
+   }
+   .main-content .to-do-list {
+      width: 30em;
+   }
+}
+
+@media (max-width: 500px) {
+   .app .header {
+      padding: 0;
+   }
+   .app .text {
+      padding-bottom: 40px;
+      font-size: 22px;
+   }
+   .app .text .theme {
+      position: sticky;
+   }
+   .main-content .to-do-list .adding .input-to-do,
+   .main-content .to-do-list .adding button,
+   .to-do-list .list .list-item {
+      padding: 16px;
+      font-size: 18px;
+   }
+
+   .main-content .to-do-list {
+      width: 100%;
+      margin: 0 20px;
+   }
+
+   .to-do-list .list .navbar {
+      flex-direction: column-reverse;
+      background-color: transparent;
+      padding: 0;
+   }
+   .to-do-list .list .navbar div {
+      padding: 20px 10px;
+   }
+
+   .to-do-list .list .navbar .main-navbar {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 6px;
+   }
+
+   .to-do-list .list .navbar .secondary-navbar {
+      width: 100%;
+
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+   }
+}
+
+@media (max-width: 420px) {
+   .app .text {
+      width: fit-content;
+   }
+}
